@@ -4,5 +4,4 @@ const router = express.Router();
 
 router.route("/").get(getNote);
 router.route("/set").post(setNote);
-
 module.exports = router;
