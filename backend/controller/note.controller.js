@@ -13,3 +13,9 @@ exports.setNote = async (req, res) => {
     .then((response) => res.json(response))
     .catch((e) => res.json(e));
 };
+exports.deleteNote = async (req, res) => {
+  const id = req.params.id;
+  Note.findByIdAndDelete(id)
+    .then((response) => res.json({ message: "successful!" }))
+    .catch((e) => res.json(e));
+}
