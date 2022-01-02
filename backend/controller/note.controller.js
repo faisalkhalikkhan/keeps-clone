@@ -13,3 +13,13 @@ exports.setNote = async (req, res) => {
     .then((response) => res.json(response))
     .catch((e) => res.json(e));
 };
+
+exports.updateNote = async (req, res) => {
+  const { id, title, description } = req.body;
+  const data = await Note.findById({ id });
+
+  res.status(200).json({
+    data: data,
+    success: true,
+  });
+};
